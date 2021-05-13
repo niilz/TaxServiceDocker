@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  db:
+    image: tax-service-postgres
+    ports:
+      - 5432:5432
+
+  appserver:
+    image: tax-service-wildfly
+    ports:
+      - 9990:9990
+      - 8080:8080
+    depends_on:
+      - db

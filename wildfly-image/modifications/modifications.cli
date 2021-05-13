@@ -1,0 +1,10 @@
+batch
+
+# Adding the postgres-driver
+/subsystem=datasources/jdbc-driver=postgresql:add(driver-name=postgresql,driver-module-name=org.postgresql,driver-class-name=org.postgresql.Driver)
+
+# Adding the postres-database (data-source)
+data-source add --name=PostgresNiilz --driver-name=postgresql --jndi-name=java:/PostgresNiilz --connection-url=jdbc:postgresql://db:5432/taxservice_db --user-name=niilz --password=geheim
+
+run-batch
+
