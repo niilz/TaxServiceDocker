@@ -12,3 +12,10 @@ services:
       - 8080:8080
     depends_on:
       - db
+  
+  frontend:
+    image: tax-service-frontend
+    ports:
+      - 5000:80
+    depends_on:
+      - appserver
